@@ -1,0 +1,135 @@
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    kubeadm.alpha.kubernetes.io/cri-socket: unix:///run/containerd/containerd.sock
+    node.alpha.kubernetes.io/ttl: "0"
+    volumes.kubernetes.io/controller-managed-attach-detach: "true"
+  creationTimestamp: "2022-12-01T03:11:36Z"
+  labels:
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/os: linux
+    kubernetes.io/arch: amd64
+    kubernetes.io/hostname: kind-control-plane
+    kubernetes.io/os: linux
+    node-role.kubernetes.io/control-plane: ""
+    node-role.kubernetes.io/master: ""
+    node.kubernetes.io/exclude-from-external-load-balancers: ""
+  name: kind-control-plane
+  resourceVersion: "2103"
+  uid: 9f96f291-9050-4c1f-843c-def28fb8a6e6
+spec:
+  podCIDR: 10.244.0.0/24
+  podCIDRs:
+  - 10.244.0.0/24
+  providerID: kind://docker/kind/kind-control-plane
+status:
+  addresses:
+  - address: 172.18.0.3
+    type: InternalIP
+  - address: kind-control-plane
+    type: Hostname
+  allocatable:
+    cpu: "4"
+    ephemeral-storage: 61255492Ki
+    hugepages-1Gi: "0"
+    hugepages-2Mi: "0"
+    memory: 4028728Ki
+    pods: "110"
+  capacity:
+    cpu: "4"
+    ephemeral-storage: 61255492Ki
+    hugepages-1Gi: "0"
+    hugepages-2Mi: "0"
+    memory: 4028728Ki
+    pods: "110"
+  conditions:
+  - lastHeartbeatTime: "2022-12-01T03:22:48Z"
+    lastTransitionTime: "2022-12-01T03:11:36Z"
+    message: kubelet has sufficient memory available
+    reason: KubeletHasSufficientMemory
+    status: "False"
+    type: MemoryPressure
+  - lastHeartbeatTime: "2022-12-01T03:22:48Z"
+    lastTransitionTime: "2022-12-01T03:11:36Z"
+    message: kubelet has no disk pressure
+    reason: KubeletHasNoDiskPressure
+    status: "False"
+    type: DiskPressure
+  - lastHeartbeatTime: "2022-12-01T03:22:48Z"
+    lastTransitionTime: "2022-12-01T03:11:36Z"
+    message: kubelet has sufficient PID available
+    reason: KubeletHasSufficientPID
+    status: "False"
+    type: PIDPressure
+  - lastHeartbeatTime: "2022-12-01T03:22:48Z"
+    lastTransitionTime: "2022-12-01T03:12:08Z"
+    message: kubelet is posting ready status
+    reason: KubeletReady
+    status: "True"
+    type: Ready
+  daemonEndpoints:
+    kubeletEndpoint:
+      Port: 10250
+  images:
+  - names:
+    - k8s.gcr.io/kube-proxy:v1.21.1
+    sizeBytes: 132714699
+  - names:
+    - k8s.gcr.io/kube-apiserver:v1.21.1
+    sizeBytes: 126834637
+  - names:
+    - k8s.gcr.io/kube-controller-manager:v1.21.1
+    sizeBytes: 121042741
+  - names:
+    - k8s.gcr.io/etcd:3.4.13-0
+    sizeBytes: 86742272
+  - names:
+    - ghcr.io/fluxcd/kustomize-controller@sha256:d6b3b62916868d9511f4018e92f554f641a1ab09ca625dd5a2622dfafcc27d19
+    - ghcr.io/fluxcd/kustomize-controller:v0.31.0
+    sizeBytes: 54124161
+  - names:
+    - docker.io/kindest/kindnetd:v20210326-1e038dc5
+    sizeBytes: 53960776
+  - names:
+    - k8s.gcr.io/kube-scheduler:v1.21.1
+    sizeBytes: 51865396
+  - names:
+    - ghcr.io/fluxcd/helm-controller@sha256:728e604487ab51ee4f62afa9cfec2bb97f4cc4828620259d3c624d90f7e7ef3a
+    - ghcr.io/fluxcd/helm-controller:v0.27.0
+    sizeBytes: 33289540
+  - names:
+    - ghcr.io/fluxcd/notification-controller@sha256:ce0a795ae9d78531d9c716e965fd4fc3aa0dba42e7ca8607ab4dcaf3a4b3ba48
+    - ghcr.io/fluxcd/notification-controller:v0.29.0
+    sizeBytes: 31741164
+  - names:
+    - ghcr.io/fluxcd/source-controller@sha256:35de1896a76ba5624056b962960d10d1f5047f64714d3be190fd0ec17212667d
+    - ghcr.io/fluxcd/source-controller:v0.32.1
+    sizeBytes: 29500029
+  - names:
+    - ghcr.io/stefanprodan/podinfo@sha256:4a72d3ce7eda670b78baadd8995384db29483dfc76e12f81a24e1fc1256c0a8e
+    - ghcr.io/stefanprodan/podinfo:6.2.3
+    sizeBytes: 27031570
+  - names:
+    - k8s.gcr.io/build-image/debian-base:v2.1.0
+    sizeBytes: 21086532
+  - names:
+    - docker.io/rancher/local-path-provisioner:v0.0.14
+    sizeBytes: 13367922
+  - names:
+    - k8s.gcr.io/coredns/coredns:v1.8.0
+    sizeBytes: 12945155
+  - names:
+    - k8s.gcr.io/pause:3.5
+    sizeBytes: 301416
+  nodeInfo:
+    architecture: amd64
+    bootID: a4db182c-db2c-454b-accd-0a40c2b62d39
+    containerRuntimeVersion: containerd://1.5.2
+    kernelVersion: 5.10.104-linuxkit
+    kubeProxyVersion: v1.21.1
+    kubeletVersion: v1.21.1
+    machineID: 7edf7735e5aa42faa9d2c2dcdda8fd8a
+    operatingSystem: linux
+    osImage: Ubuntu 21.04
+    systemUUID: 3e47341c-3f16-4619-9e56-060b08ffd944
