@@ -22,3 +22,6 @@ spec:
       - key: "example-key"
         operator: "Exists"
         effect: "NoSchedule"
+      - key: "example-key"
+        operator: "Exists"
+        effect: "NoSchedule"
