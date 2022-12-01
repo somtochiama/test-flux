@@ -18,7 +18,7 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "500m"
-        tolerations:
-        - key: "example-key"
-          operator: "Exists"
-          effect: "NoSchedule"
+      tolerations:
+      - key: "example-key"
+        operator: "Exists"
+        effect: "NoSchedule"
